@@ -1,0 +1,34 @@
+{
+  "num_samples": 120,
+  "num_pos": 52,
+  "num_neg": 68,
+  "fold_metrics": [
+    {
+      "fold": 0,
+      "valid_acc": 0.4166666567325592,
+      "num_valid": 24
+    },
+    {
+      "fold": 1,
+      "valid_acc": 0.75,
+      "num_valid": 24
+    },
+    {
+      "fold": 2,
+      "valid_acc": 0.7083333134651184,
+      "num_valid": 24
+    },
+    {
+      "fold": 3,
+      "valid_acc": 0.8333333134651184,
+      "num_valid": 24
+    },
+    {
+      "fold": 4,
+      "valid_acc": 0.7916666865348816,
+      "num_valid": 24
+    }
+  ],
+  "cv_acc_mean": 0.6999999940395355,
+  "train_acc_full": 1.0
+}

@@ -1,0 +1,13 @@
+{
+  "table": "TruthfulQA open-ended generation summary",
+  "model": "Llama-2-7B",
+  "method": "AdaSpec",
+  "source": "anonymous_archive/source_summary.json",
+  "count": 817,
+  "true_percent": 62.1787,
+  "info_percent": 76.7442,
+  "true_info_percent": 40.8813,
+  "true_count": 508,
+  "info_count": 627,
+  "true_info_count": 334
+}

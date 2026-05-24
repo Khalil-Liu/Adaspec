@@ -1,0 +1,4 @@
+﻿"model","method","truthfulqa_mc1_percent","truthfulqa_mc2_percent","truthfulqa_mc3_percent","bbq_acc_percent","bbq_unk_percent","bbq_sr_percent"
+"Llama-2-7B","AdaSpec","43.21","59.87","30.66","45.2","14.81","43.34"
+"Gemma-7B","AdaSpec","35.37","53.93","26.8","43.19","26.76","33.15"
+"Mistral-7B","AdaSpec","56.3","72.41","45.19","94.82","0.78","4.25"

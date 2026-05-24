@@ -1,0 +1,45 @@
+{
+  "table": "Cross-backbone AdaSpec summary on TruthfulQA and BBQ",
+  "metrics": {
+    "truthfulqa": "MC1/MC2/MC3 in percent; higher is better",
+    "bbq": "Acc, Unk, and SR in percent; Acc higher is better, Unk/SR lower is better"
+  },
+  "rows": [
+    {
+      "model": "Llama-2-7B",
+      "method": "AdaSpec",
+      "truthfulqa_mc1_percent": 43.21,
+      "truthfulqa_mc2_percent": 59.87,
+      "truthfulqa_mc3_percent": 30.66,
+      "bbq_acc_percent": 45.2,
+      "bbq_unk_percent": 14.81,
+      "bbq_sr_percent": 43.34,
+      "truthfulqa_source": "anonymous_archive/truthfulqa/result.json",
+      "bbq_source": "anonymous_archive/bbq/result.json"
+    },
+    {
+      "model": "Gemma-7B",
+      "method": "AdaSpec",
+      "truthfulqa_mc1_percent": 35.37,
+      "truthfulqa_mc2_percent": 53.93,
+      "truthfulqa_mc3_percent": 26.8,
+      "bbq_acc_percent": 43.19,
+      "bbq_unk_percent": 26.76,
+      "bbq_sr_percent": 33.15,
+      "truthfulqa_source": "anonymous_archive/truthfulqa/result.json",
+      "bbq_source": "anonymous_archive/bbq/result.json"
+    },
+    {
+      "model": "Mistral-7B",
+      "method": "AdaSpec",
+      "truthfulqa_mc1_percent": 56.3,
+      "truthfulqa_mc2_percent": 72.41,
+      "truthfulqa_mc3_percent": 45.19,
+      "bbq_acc_percent": 94.82,
+      "bbq_unk_percent": 0.78,
+      "bbq_sr_percent": 4.25,
+      "truthfulqa_source": "anonymous_archive/truthfulqa/result.json",
+      "bbq_source": "anonymous_archive/bbq/result.json"
+    }
+  ]
+}

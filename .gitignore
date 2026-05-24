@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+.env
+.venv/
+venv/
+env/
+.cache/
+wandb/
+
+# Large model checkpoints/projectors should be stored with Git LFS or Releases.
+*.bin
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+
+# Keep the small released probe router.
+!weights/probe_router/probe_router.pt
+
+# Keep compact summaries, not full experiment dumps.
+anonymous_archive/
+truthful_projections/
+bias_projections/
