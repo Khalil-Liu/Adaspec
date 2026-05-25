@@ -32,7 +32,7 @@ class AdapterLayer(torch.nn.Module):
     def non_linear_feature_func(self, X, func='squared-exponential'):
         if func == 'squared-exponential':
             length_scale = 1
-            return torch.exp(-1 * X**2 / (2 * length_scale**2)) # 高斯核中使用 X**2
+            return torch.exp(-1 * X**2 / (2 * length_scale**2)) 
         if func == 'tanh':
             return torch.tanh(X)
         if func == 'elu':
@@ -64,20 +64,17 @@ class AdapterLayer(torch.nn.Module):
             
             bs, L, d = x.size()
 
-            # 这里的 x 是某一层 MLP 的输出。
-            # SEA 不改 attention，也不改模型权重，而是在 MLP 输出后做一次激活编辑。
             x = x.T
-            x = x.view(d, L * bs) # 重塑为 (d, bs*L)
+            x = x.view(d, L * bs) 
 
-            # 计算当前层输出的范数（x: N*d）。
+    
             norm = torch.norm(x.float(),dim=-1).unsqueeze(-1)
-            mean = torch.mean(x, dim=0, keepdim=True) # Nxd
+            mean = torch.mean(x, dim=0, keepdim=True) 
 
             if self.feature_function:
                 self.non_linear_feature_func(x, self.feature_function)
             
-            # 分别做 positive / negative projector，
-            # 然后再把两路编辑后的表示组合起来。
+     
             pos_x = torch.matmul(self.positive_projection, x) 
             neg_x = torch.matmul(self.negative_projection, x) 
             
@@ -86,8 +83,7 @@ class AdapterLayer(torch.nn.Module):
                 neg_x = self.inv_non_linear_feature_func(neg_x, self.feature_function)
             
             if self.combine_sea_embeddings == 'l2_norm':
-                # 默认主线做法：pos + neg 后，再把范数缩放回原始量级，
-                # 避免编辑后的表示幅度失真过大。
+    
                 x = (pos_x + neg_x)
                 norm_x = torch.norm(x.float(),dim=-1).unsqueeze(-1) 
                 x = x * norm / norm_x
@@ -107,7 +103,7 @@ class model_with_adapter(torch.nn.Module):
     def __init__(self, model):
         super().__init__()
         self.model = model
-        # 冻结原始模型参数。
+   
         for params in self.model.parameters():
             params.requires_grad = False
 
@@ -120,11 +116,7 @@ class model_with_adapter(torch.nn.Module):
         positive_projection = torch.load(positive_proj).cuda()
         negative_projection = torch.load(negative_proj).cuda()
 
-        # 关键点：
-        # 这里是把原始 block 的 mlp 替换成 Sequential(原始 mlp, AdapterLayer)。
-        # 所以 SEA 的改动位置是在 Transformer block 的 MLP 后，而不是 attention 后。
-        # 也就是说执行顺序是：原始 MLP -> SEA Adapter。
-        # 对所有层应用 SEA。
+
         if apply_sea_layers == 'all':
             for i in range(0, len(self.model.model.layers)):
                 self.model.model.layers[i].mlp = torch.nn.Sequential(self.model.model.layers[i].mlp, AdapterLayer(positive_projection[i], negative_projection[i], combine_sea_embeddings, feature_function))
@@ -134,7 +126,7 @@ class model_with_adapter(torch.nn.Module):
         if apply_sea_layers == 'last-L':
             for i in range(len(self.model.model.layers)-int(L), len(self.model.model.layers)):
                 self.model.model.layers[i].mlp = torch.nn.Sequential(self.model.model.layers[i].mlp, AdapterLayer(positive_projection[i], negative_projection[i], combine_sea_embeddings, feature_function))
-        # 只对最后若干层应用 SEA。
+
         elif apply_sea_layers == 'last':
             self.model.model.layers[-1].mlp = torch.nn.Sequential(self.model.model.layers[-1].mlp, AdapterLayer(positive_projection[-1], negative_projection[-1], combine_sea_embeddings, feature_function))
         elif apply_sea_layers == 'specific':
@@ -168,7 +160,7 @@ class LLamaQaStoppingCriteria(StoppingCriteria):
         
     @add_start_docstrings(STOPPING_CRITERIA_INPUTS_DOCSTRING)
     def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor, **kwargs) -> bool:
-        # 检查最后 {self.length} 个 token。
+
         stop = False
         for token_ids_sequence, length in zip(self.token_ids_sequences, self.lengths):
             if input_ids.shape[-1] < length:
@@ -213,7 +205,7 @@ class Inference:
         if amateur_model_name is not None:
             self.amateur_model, self.amateur_model_tokenizer = self.load_model(amateur_model_name, amateur_model_nums_gpus, num_gpus)
         if sea:
-            # 这里不会训练底座模型参数，只是在推理前给指定层动态挂 adapter。
+        
             while True:
                 try:
                     model_with_adapter(self.model).remove_adapter()
@@ -243,10 +235,7 @@ class Inference:
             tokenizer: transformers tokenizer
         """
         if self.device == "cuda":
-            ## v100 机器配置
-            # kwargs = {"torch_dtype": torch.float16, "offload_folder": f"{model_name}/offload"}
-            
-            # a100 机器配置
+
             kwargs = {"torch_dtype": torch.bfloat16, "offload_folder": f"{model_name}/offload"}
             if num_gpus == -1:
                 kwargs["device_map"] = "auto"
@@ -285,7 +274,7 @@ class Inference:
             model.load_adapter(self.lora_name)
 
 
-        if self.device == "cuda" and num_gpus == 1:  # 单张 GPU 可以放下两个模型
+        if self.device == "cuda" and num_gpus == 1: 
             model.cuda()
         
         return model, tokenizer
@@ -309,7 +298,7 @@ class Inference:
                  mature_layer=None, premature_layer=None, candidate_premature_layers=[], 
                  mode='baseline', verbose=True, remove_stop_words=False, relative_top=0.1, 
                  **kwargs):
-        # TODO：用于生成内容的 prompt-based contrastive decoding。
+
         """函数摘要
 
         Args:
@@ -412,22 +401,22 @@ class Inference:
             continue_length = len(continue_ids)
             if mode == 'baseline':
                 outputs = self.model(input_ids)[0].squeeze(0)
-                outputs = outputs.log_softmax(-1)  # 将 logits 转为 log probability
+                outputs = outputs.log_softmax(-1)  
 
-                # 跳过 prompt 中的 token，只统计答案部分。
+          
                 outputs = outputs[prefix_ids.shape[-1] - 1: -1, :]
 
-                # 获取答案中每个 token 的 log probability。
+            
                 log_probs = outputs[range(outputs.shape[0]), continue_ids].sum().item()
             
             if mode == 'sea':
                 outputs = self.model(input_ids)[0].squeeze(0)
-                outputs = outputs.log_softmax(-1)  # 将 logits 转为 log probability
+                outputs = outputs.log_softmax(-1)  
 
-                # 跳过 prompt 中的 token，只统计答案部分。
+           
                 outputs = outputs[prefix_ids.shape[-1] - 1: -1, :]
 
-                # 获取答案中每个 token 的 log probability。
+             
                 log_probs = outputs[range(outputs.shape[0]), continue_ids].sum().item()
                 
             elif mode == 'dola-static':
@@ -468,27 +457,25 @@ class Inference:
                 )
 
                 for seq_i in range(prefix_ids.shape[-1] - 1, input_ids.shape[-1] - 1):
-                    # 选择差异更大的早期层进行对比。
-                    # 1. 将所有 premature_layers 堆叠到一个新维度。
+              
                     stacked_premature_layers = torch.stack([dict_outputs[i][:, seq_i, :] for i in candidate_premature_layers], dim=0)
 
-                    # 2. 计算 mature_layer 和所有 premature_layers 的 softmax。
+            
                     softmax_mature_layer = F.softmax(dict_outputs[mature_layer][:, seq_i, :], dim=-1)  # shape: (batch_size, num_features)
                     softmax_premature_layers = F.softmax(stacked_premature_layers, dim=-1)  # shape: (num_premature_layers, batch_size, num_features)
 
-                    # 3. 计算平均分布 M。
                     M = 0.5 * (softmax_mature_layer[None, :, :] + softmax_premature_layers)  # shape: (num_premature_layers, batch_size, num_features)
 
-                    # 4. 计算用于 KL 散度的 log-softmax。
+          
                     log_softmax_mature_layer = F.log_softmax(dict_outputs[mature_layer][:, seq_i, :], dim=-1)  # shape: (batch_size, num_features)
                     log_softmax_premature_layers = F.log_softmax(stacked_premature_layers, dim=-1)  # shape: (num_premature_layers, batch_size, num_features)
 
-                    # 5. 先计算 KL 散度，再得到 JS 散度。
+              
                     kl1 = F.kl_div(log_softmax_mature_layer[None, :, :], M, reduction='none').mean(-1)  # shape: (num_premature_layers, batch_size)
                     kl2 = F.kl_div(log_softmax_premature_layers, M, reduction='none').mean(-1)  # shape: (num_premature_layers, batch_size)
                     js_divs = 0.5 * (kl1 + kl2)  # shape: (num_premature_layers, batch_size)
 
-                    # 6. 按 batchmean 方式归约。
+            
                     js_divs = js_divs.mean(-1)  # shape: (num_premature_layers,)
                     premature_layer = candidate_premature_layers[int(js_divs.argmax().cpu().item())]
                     premature_layer_dist[premature_layer] += 1
@@ -553,7 +540,7 @@ class Inference:
             
             if self.dataset_name == 'bbq':
                 log_probs = log_probs / continue_length
-            elif self.dataset_name == 'truthfulqa': # 与 ICD 和 DoLA 保持一致
+            elif self.dataset_name == 'truthfulqa': 
                 log_probs = log_probs
 
             
@@ -561,7 +548,7 @@ class Inference:
     
     
     def lm_prob(self, input_text1, input_text2, input_text3=None, pmi=False, max_new_tokens=256, top_p=0.95, top_k=0, temperature=0.8, mature_layer=None, premature_layer=None, candidate_premature_layers=[], mode='baseline', verbose=True, remove_stop_words=False, relative_top=0.1, relative_top_value=-1000.0, post_softmax=True, **kwargs):
-        # 用于校准时，返回每个答案的平均概率。
+   
         with torch.no_grad():
             input_text = input_text1 + input_text2
             input_ids = self.tokenizer(input_text, return_tensors="pt").input_ids.to(self.device)
@@ -569,12 +556,12 @@ class Inference:
             continue_ids = input_ids[0, prefix_ids.shape[-1]:]
             if mode == 'baseline':
                 outputs = self.model(input_ids)[0].squeeze(0)
-                outputs = outputs.softmax(-1)  # 将 logits 转为 log probability
+                outputs = outputs.softmax(-1)  
 
-                # 跳过 prompt 中的 token，只统计答案部分。
+             
                 outputs = outputs[prefix_ids.shape[-1] - 1: -1, :]
 
-                # 获取答案中每个 token 的 log probability。
+             
                 mean_probs = outputs[range(outputs.shape[0]), continue_ids].mean().item()
  
             elif mode == 'contrastive-decoding':

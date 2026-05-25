@@ -1,6 +1,6 @@
 # AdaSpec Anonymous Evaluation Release
 
-This anonymous repository contains the evaluation-time code, compact result summaries, and released probe-router weights for reproducing the reported AdaSpec evaluation results. Training scripts are intentionally omitted during review and will be released after the review process.
+This anonymous repository currently provides evaluation-time code, compact result summaries, and released probe-router weights for reproducing the reported AdaSpec evaluation results. More implementation details, including full training scripts, configuration files, and extended reproduction resources, are coming soon and will be released after the review process.
 
 ## Included Files
 
@@ -29,22 +29,6 @@ pip install -r requirements.txt
 
 The base language model must be downloaded separately and passed with `--model-name`.
 
-## Weights
-
-The released probe-router weights are included here:
-
-```text
-weights/probe_router/probe_router.pt
-```
-
-The SVD/GEVD projector files are large and should be provided through Git LFS, GitHub Releases, or an anonymous artifact link during review. Put them at the following paths, or replace the command-line arguments with your own absolute paths:
-
-```text
-projectors/svd/no_mean_sub_uu_positive.pt
-projectors/svd/no_mean_sub_uu_negative.pt
-projectors/gevd/no_mean_sub_uu_positive.pt
-projectors/gevd/no_mean_sub_uu_negative.pt
-```
 
 ## Default Configuration
 
@@ -56,44 +40,6 @@ edit_layers = last-L
 L = 2
 lower_threshold = 0.40
 upper_threshold = 0.60
-```
-
-## Main Results
-
-### Llama-2-7B
-
-TruthfulQA:
-
-```text
-MC1 = 43.21
-MC2 = 59.87
-MC3 = 30.66
-```
-
-BBQ:
-
-```text
-Accuracy = 45.20
-Unknown answer rate = 14.81
-Stereotypical response rate = 43.34
-Bias score = 7.72
-```
-
-### Cross-Backbone Results
-
-| Model | TruthfulQA MC1 | TruthfulQA MC2 | TruthfulQA MC3 | BBQ Acc | BBQ Unk | BBQ SR |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Llama-2-7B | 43.21 | 59.87 | 30.66 | 45.20 | 14.81 | 43.34 |
-| Gemma-7B | 35.37 | 53.93 | 26.80 | 43.19 | 26.76 | 33.15 |
-| Mistral-7B | 56.30 | 72.41 | 45.19 | 94.82 | 0.78 | 4.25 |
-
-### TruthfulQA Open-Ended Generation
-
-```text
-True = 62.18
-Info = 76.74
-True * Info = 40.88
-Number of examples = 817
 ```
 
 ## Example: TruthfulQA Evaluation
