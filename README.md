@@ -133,13 +133,20 @@ python bbq_eval.py \
 
 The released control-task results cover four benchmarks: HellaSwag, MMLU, ToxiGen, and MathQA. `run_control_tasks.sh` runs methods sequentially on one GPU and writes JSON results plus `summary.md` under `results/control_tasks/`.
 
-### HellaSwag and MMLU
-
-These two multiple-choice benchmarks can be evaluated together in one `lm-eval-harness` invocation:
+### HellaSwag
 
 ```bash
 METHODS="base svd_l2 gevd_l2 adaspec" \
-TASKS="hellaswag,mmlu" \
+TASKS="hellaswag" \
+BATCH_SIZE="auto:4" \
+bash run_control_tasks.sh
+```
+
+### MMLU
+
+```bash
+METHODS="base svd_l2 gevd_l2 adaspec" \
+TASKS="mmlu" \
 BATCH_SIZE="auto:4" \
 bash run_control_tasks.sh
 ```
