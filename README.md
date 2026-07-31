@@ -101,6 +101,10 @@ export GEVD_NEG=projectors/gevd/no_mean_sub_uu_negative.pt
 export PROBE=weights/probe_router/probe_router.pt
 ```
 
+## Training Code
+
+This repository is an evaluation and inference release. HaluEval activation extraction, SVD/GEVD projector training, probe-feature extraction, and probe-training code are intentionally not included in the current repository. Full training scripts, configurations, and extended reproduction resources are coming soon after the review process.
+
 ## Evaluate TruthfulQA
 
 ```bash
@@ -127,21 +131,29 @@ python bbq_eval.py \
 
 ## Evaluate General Capabilities
 
-`run_control_tasks.sh` runs methods sequentially on one GPU and writes JSON results plus `summary.md` under `results/control_tasks/`.
+The released control-task results cover four benchmarks: HellaSwag, MMLU, ToxiGen, and MathQA. `run_control_tasks.sh` runs methods sequentially on one GPU and writes JSON results plus `summary.md` under `results/control_tasks/`.
+
+### HellaSwag and MMLU
+
+These two multiple-choice benchmarks can be evaluated together in one `lm-eval-harness` invocation:
 
 ```bash
-# HellaSwag and MMLU
 METHODS="base svd_l2 gevd_l2 adaspec" \
 TASKS="hellaswag,mmlu" \
 BATCH_SIZE="auto:4" \
 bash run_control_tasks.sh
+```
 
-# ToxiGen
+### ToxiGen
+
+```bash
 METHODS="base svd_l2 gevd_l2 adaspec" \
 TASKS="toxigen" \
 BATCH_SIZE="auto:4" \
 bash run_control_tasks.sh
 ```
+
+### MathQA
 
 MathQA requires the official `MathQA.zip` to be unpacked under `data/control_tasks/mathqa/` and is then evaluated with the included local task definition:
 
