@@ -2,7 +2,7 @@
 
 AdaSpec is an inference-time LLM alignment framework. It adaptively routes each input to an SVD editor, a GEVD editor, or bypass. The two editors are complementary: SVD preserves dominant representation structure, while GEVD emphasizes class-discriminative spectral directions.
 
-![AdaSpec overview](assets/method.jpg)
+![AdaSpec overview](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/method.jpg)
 
 ## Results
 
@@ -39,12 +39,12 @@ Higher is better for all metrics. `True*Info` is the joint TruthfulQA open-ended
 | Mistral-7B | AdaSpec | 56.30 | 72.41 | 94.82 | 0.78 | 4.25 |
 
 <p align="center">
-  <img src="assets/ablation.png" width="47%" alt="Ablation study">
-  <img src="assets/router_threshold.png" width="47%" alt="Router threshold analysis">
+  <img src="https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/ablation.png" width="47%" alt="Ablation study">
+  <img src="https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/router_threshold.png" width="47%" alt="Router threshold analysis">
 </p>
 
 <p align="center">
-  <img src="assets/operator_visualization.png" width="72%" alt="SVD and GEVD operator visualization">
+  <img src="https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/operator_visualization.png" width="72%" alt="SVD and GEVD operator visualization">
 </p>
 
 ### Control Tasks and Resource Overhead
