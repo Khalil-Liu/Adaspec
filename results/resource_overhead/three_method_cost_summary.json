@@ -1,0 +1,56 @@
+{
+  "reference_method": "SVD-L2",
+  "runs": [
+    {
+      "method": "SVD-L2",
+      "mc1": 0.37454100367197063,
+      "mc2": 0.5517812661328158,
+      "mc3": 0.27855394299702746,
+      "avg_forward_time_seconds": 0.05023206671261882,
+      "wall_time_seconds": 382.5414140459616,
+      "peak_gpu_memory_mib": 18056,
+      "projector_storage_bytes": 4294970802,
+      "projector_storage_gib": 4.000003265216947,
+      "relative_to_reference": {
+        "mc1_absolute": 0.0,
+        "avg_forward_time_relative": 0.0,
+        "wall_time_relative": 0.0,
+        "peak_gpu_memory_delta_mib": 0
+      }
+    },
+    {
+      "method": "GEVD-L2",
+      "mc1": 0.36107711138310894,
+      "mc2": 0.5582042156807484,
+      "mc3": 0.2864889938023354,
+      "avg_forward_time_seconds": 0.05022090289945023,
+      "wall_time_seconds": 10007.667681173887,
+      "peak_gpu_memory_mib": 18056,
+      "projector_storage_bytes": 4294970802,
+      "projector_storage_gib": 4.000003265216947,
+      "relative_to_reference": {
+        "mc1_absolute": -0.01346389228886169,
+        "avg_forward_time_relative": -0.0002222447511956993,
+        "wall_time_relative": 25.16100457026984,
+        "peak_gpu_memory_delta_mib": 0
+      }
+    },
+    {
+      "method": "AdaSpec-L2",
+      "mc1": 0.4259485924112607,
+      "mc2": 0.5869855622542078,
+      "mc3": 0.30082425054885287,
+      "avg_forward_time_seconds": 0.0516846618076213,
+      "wall_time_seconds": 357.1252278150059,
+      "peak_gpu_memory_mib": 15142,
+      "projector_storage_bytes": 8589993459,
+      "projector_storage_gib": 8.000054824166,
+      "relative_to_reference": {
+        "mc1_absolute": 0.05140758873929008,
+        "avg_forward_time_relative": 0.02891768525696703,
+        "wall_time_relative": -0.06644035207100984,
+        "peak_gpu_memory_delta_mib": -2914
+      }
+    }
+  ]
+}
