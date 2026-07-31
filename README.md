@@ -2,12 +2,16 @@
 
 AdaSpec is an inference-time LLM alignment framework. It adaptively routes each input to an SVD editor, a GEVD editor, or bypass. The two editors are complementary: SVD preserves dominant representation structure, while GEVD emphasizes class-discriminative spectral directions.
 
-![AdaSpec overview](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/method.jpg)
-
 ## Updates
 
 - (2026-07-31) Released inference, evaluation, result artifacts, and manuscript visualizations.
 - Training scripts, configurations, and extended reproduction resources are coming soon after the review process.
+
+## Highlights
+
+AdaSpec makes spectral activation editing adaptive to the input rather than applying one fixed editor to every prompt. It combines two complementary spectral editors: the SVD editor preserves dominant representation directions learned from the aligned demonstrations, while the GEVD editor emphasizes directions that discriminate aligned and misaligned representations. A lightweight probe estimates the preferred editor from pre-edit hidden states. High-confidence predictions are routed to the selected editor, whereas uncertain cases bypass editing, reducing unnecessary interventions. The complete procedure operates at inference time and keeps the backbone frozen.
+
+![AdaSpec overview](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/method.jpg)
 
 ## Results
 
@@ -185,13 +189,31 @@ bash run_control_tasks.sh
 
 ## Repository Contents
 
-- `truthqa_eval.py`, `bbq_eval.py`: AdaSpec evaluations on the two alignment benchmarks.
-- `evaluate_edited_lm_eval.py`, `run_control_tasks.sh`: general-capability evaluation entry points.
-- `src/decoding_algorithm/`: SVD, GEVD, and probe-router inference implementations.
-- `assets/`: method diagram and manuscript visualizations rendered directly by GitHub.
-- `results/truthfulqa/` and `results/bbq/`: final evaluation JSON, compact summaries, and command arguments.
-- `results/control_tasks/`: compact general-capability metric summaries.
-- `results/resource_overhead/`: raw resource measurements and the final cost summary.
+### Evaluation Entry Points
+
+- `truthqa_eval.py`: evaluates Llama-2-style chat models on TruthfulQA multiple-choice questions and reports MC1, MC2, MC3, and mean model-forward time. It supports the base model, a fixed SEA editor, or AdaSpec routing.
+- `bbq_eval.py`: evaluates the same editing modes on BBQ and reports accuracy, unknown-answer rate, and stereotype rate for the requested split.
+- `evaluate_edited_lm_eval.py`: runs a base, fixed-editor, or AdaSpec-edited model through `lm-evaluation-harness`. It is the shared evaluator for HellaSwag, MMLU, ToxiGen, GSM8K, and other harness tasks.
+- `run_control_tasks.sh`: sequentially runs the requested methods on one GPU, writes one JSON record per method, and invokes the result summarizer. Set `METHODS`, `TASKS`, `BATCH_SIZE`, `NUM_FEWSHOT`, or `LIMIT` as environment variables to control a run.
+- `summarize_control_task_results.py`: reads the per-method harness JSON files and prints the HellaSwag and MMLU accuracy table used in the README.
+- `local_tasks/mathqa_local/`: local `lm-evaluation-harness` task definition for the official MathQA archive; it evaluates multiple-choice accuracy after `MathQA.zip` is unpacked under `data/control_tasks/mathqa/`.
+
+### Inference Components
+
+- `src/decoding_algorithm/inference.py`: fixed spectral editing with the SVD or GEVD projection pair.
+- `src/decoding_algorithm/inference_probe_router_abstain.py`: AdaSpec inference wrapper. It obtains the probe score, routes to SVD or GEVD when confident, and bypasses editing in the uncertainty interval.
+
+### Figures and Result Artifacts
+
+- `assets/method.jpg`: overview of the two-editor construction and confidence-aware routing procedure.
+- `assets/ablation.png`: final radar visualization of the ablation results reported in the paper.
+- `assets/router_threshold.png`: routing-threshold analysis, illustrating the effect of the confidence interval used for SVD/GEVD/bypass decisions.
+- `assets/operator_visualization.png`: induced positive and negative spectral operators for SVD and GEVD, visualizing their distinct structures.
+- `results/truthfulqa/` and `results/bbq/`: final benchmark JSON files, compact summaries, and exact command arguments.
+- `results/control_tasks/`: per-method JSON outputs and compact general-capability metric summaries.
+- `results/resource_overhead/`: raw latency, peak-memory, and editor-storage measurements together with the final cost summary.
+
+The released `assets/` directory contains the final manuscript figure files. The corresponding plotting scripts are not part of the current evaluation and inference release.
 
 ## Citation
 
