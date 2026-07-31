@@ -6,6 +6,26 @@ AdaSpec is an inference-time LLM alignment framework. It adaptively routes each 
 
 ## Results
 
+### Table 1: TruthfulQA Comparison with State-of-the-Art Methods
+
+Higher is better for all metrics. `True*Info` is the joint TruthfulQA open-ended score.
+
+| Method | MC1 | MC2 | MC3 | True | Info | True*Info |
+|---|---:|---:|---:|---:|---:|---:|
+| Llama-2-7B | 33.41 | 51.07 | 24.76 | 36.96 | 86.29 | 31.90 |
+| CD | 24.40 | 41.00 | 19.00 | 55.30 | 80.29 | 44.40 |
+| DoLa | 32.20 | 63.80 | 32.10 | 42.10 | 98.30 | 41.38 |
+| SH2 | 33.90 | 57.07 | 29.79 | 64.38 | 65.59 | 42.23 |
+| ITI | 38.31 | 57.15 | 30.53 | 94.49 | 80.55 | 76.11 |
+| CAA | 34.03 | 52.76 | 25.62 | 71.60 | 83.84 | 60.03 |
+| SEA | 39.41 | 57.18 | 29.13 | 50.67 | 68.05 | 33.66 |
+| ACT | 36.75 | 54.01 | 26.94 | 63.81 | 73.33 | 65.53 |
+| CAST | 33.90 | 51.17 | 25.01 | 67.69 | 86.17 | 58.33 |
+| LLM-CAS | 35.47 | 51.45 | 25.01 | 75.12 | 94.22 | 70.78 |
+| AdaSpec | **43.21** | **59.87** | **30.66** | 62.18 | 76.72 | 40.88 |
+
+### Table 2: Generality Across Backbones
+
 | Model | Method | TruthfulQA MC1 | TruthfulQA MC2 | BBQ Acc. | BBQ Unk. | BBQ SR |
 |---|---|---:|---:|---:|---:|---:|
 | Llama-2-7B | ICL | 36.90 | 54.60 | 43.00 | 19.60 | 52.00 |
