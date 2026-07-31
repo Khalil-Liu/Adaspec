@@ -22,7 +22,7 @@ Higher is better for all metrics. `True*Info` is the joint TruthfulQA open-ended
 | ACT | 36.75 | 54.01 | 26.94 | 63.81 | 73.33 | 65.53 |
 | CAST | 33.90 | 51.17 | 25.01 | 67.69 | 86.17 | 58.33 |
 | LLM-CAS | 35.47 | 51.45 | 25.01 | 75.12 | 94.22 | 70.78 |
-| AdaSpec | **43.21** | **59.87** | **30.66** | 62.18 | 76.72 | 40.88 |
+| AdaSpec | 43.21 | 59.87 | 30.66 | 62.18 | 76.72 | 40.88 |
 
 ### Table 2: Generality Across Backbones
 
@@ -30,13 +30,13 @@ Higher is better for all metrics. `True*Info` is the joint TruthfulQA open-ended
 |---|---|---:|---:|---:|---:|---:|
 | Llama-2-7B | ICL | 36.90 | 54.60 | 43.00 | 19.60 | 52.00 |
 | Llama-2-7B | SEA | 39.41 | 57.18 | 41.69 | 19.63 | 41.73 |
-| Llama-2-7B | AdaSpec | **43.21** | **59.87** | **45.20** | **14.81** | **43.34** |
+| Llama-2-7B | AdaSpec | 43.21 | 59.87 | 45.20 | 14.81 | 43.34 |
 | Gemma-7B | ICL | 34.30 | 52.90 | 44.40 | 30.10 | 43.60 |
 | Gemma-7B | SEA | 34.88 | 53.82 | 43.52 | 26.80 | 32.96 |
-| Gemma-7B | AdaSpec | **35.37** | **53.93** | 43.19 | **26.76** | 33.15 |
+| Gemma-7B | AdaSpec | 35.37 | 53.93 | 43.19 | 26.76 | 33.15 |
 | Mistral-7B | ICL | 55.80 | 72.10 | 94.60 | 0.80 | 4.20 |
 | Mistral-7B | SEA | 55.81 | 72.30 | 93.56 | 1.30 | 4.59 |
-| Mistral-7B | AdaSpec | **56.30** | **72.41** | **94.82** | **0.78** | 4.25 |
+| Mistral-7B | AdaSpec | 56.30 | 72.41 | 94.82 | 0.78 | 4.25 |
 
 <p align="center">
   <img src="assets/ablation.png" width="47%" alt="Ablation study">
