@@ -4,6 +4,11 @@ AdaSpec is an inference-time LLM alignment framework. It adaptively routes each 
 
 ![AdaSpec overview](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/method.jpg)
 
+## Updates
+
+- (2026-07-31) Released inference, evaluation, result artifacts, and manuscript visualizations.
+- Training scripts, configurations, and extended reproduction resources are coming soon after the review process.
+
 ## Results
 
 ### Table 1: TruthfulQA Comparison with State-of-the-Art Methods
@@ -197,3 +202,9 @@ bash run_control_tasks.sh
   year={2026}
 }
 ```
+
+## Acknowledgments
+
+AdaSpec extends the [SEA-LLM](https://github.com/liuhs666/sea-llm) implementation of *SEA: Spectral Editing of Activations for Large Language Model Alignment*. In particular, the model-loading, activation-editing, and baseline evaluation utilities under `src/` were used as the engineering foundation and were extended here with the GEVD editor and confidence-aware probe routing.
+
+The general-capability evaluation interface is built on [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) and [Hugging Face Transformers](https://github.com/huggingface/transformers). We also thank the authors of [TruthfulQA](https://github.com/sylinrl/TruthfulQA) and [BBQ](https://github.com/nyu-mll/BBQ) for releasing their benchmarks and evaluation resources.
