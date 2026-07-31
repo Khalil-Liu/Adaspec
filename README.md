@@ -19,33 +19,11 @@ AdaSpec makes spectral activation editing adaptive to the input rather than appl
 
 Higher is better for all metrics. `True*Info` is the joint TruthfulQA open-ended score.
 
-| Method | MC1 | MC2 | MC3 | True | Info | True*Info |
-|---|---:|---:|---:|---:|---:|---:|
-| Llama-2-7B | 33.41 | 51.07 | 24.76 | 36.96 | 86.29 | 31.90 |
-| CD | 24.40 | 41.00 | 19.00 | 55.30 | 80.29 | 44.40 |
-| DoLa | 32.20 | 63.80 | 32.10 | 42.10 | 98.30 | 41.38 |
-| SH2 | 33.90 | 57.07 | 29.79 | 64.38 | 65.59 | 42.23 |
-| ITI | 38.31 | 57.15 | 30.53 | 94.49 | 80.55 | 76.11 |
-| CAA | 34.03 | 52.76 | 25.62 | 71.60 | 83.84 | 60.03 |
-| SEA | 39.41 | 57.18 | 29.13 | 50.67 | 68.05 | 33.66 |
-| ACT | 36.75 | 54.01 | 26.94 | 63.81 | 73.33 | 65.53 |
-| CAST | 33.90 | 51.17 | 25.01 | 67.69 | 86.17 | 58.33 |
-| LLM-CAS | 35.47 | 51.45 | 25.01 | 75.12 | 94.22 | 70.78 |
-| AdaSpec | 43.21 | 59.87 | 30.66 | 62.18 | 76.72 | 40.88 |
+![Table 1: TruthfulQA comparison](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/table1.png)
 
 ### Table 2: Generality Across Backbones
 
-| Model | Method | TruthfulQA MC1 | TruthfulQA MC2 | BBQ Acc. | BBQ Unk. | BBQ SR |
-|---|---|---:|---:|---:|---:|---:|
-| Llama-2-7B | ICL | 36.90 | 54.60 | 43.00 | 19.60 | 52.00 |
-| Llama-2-7B | SEA | 39.41 | 57.18 | 41.69 | 19.63 | 41.73 |
-| Llama-2-7B | AdaSpec | 43.21 | 59.87 | 45.20 | 14.81 | 43.34 |
-| Gemma-7B | ICL | 34.30 | 52.90 | 44.40 | 30.10 | 43.60 |
-| Gemma-7B | SEA | 34.88 | 53.82 | 43.52 | 26.80 | 32.96 |
-| Gemma-7B | AdaSpec | 35.37 | 53.93 | 43.19 | 26.76 | 33.15 |
-| Mistral-7B | ICL | 55.80 | 72.10 | 94.60 | 0.80 | 4.20 |
-| Mistral-7B | SEA | 55.81 | 72.30 | 93.56 | 1.30 | 4.59 |
-| Mistral-7B | AdaSpec | 56.30 | 72.41 | 94.82 | 0.78 | 4.25 |
+![Table 2: Generality across backbones](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/table2.png)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/ablation.png" width="47%" alt="Ablation study">
@@ -56,20 +34,17 @@ Higher is better for all metrics. `True*Info` is the joint TruthfulQA open-ended
   <img src="https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/operator_visualization.png" width="72%" alt="SVD and GEVD operator visualization">
 </p>
 
-### Control Tasks and Resource Overhead
+### Table 3: Post-Editing Performance on Control Tasks
 
-| Method | HellaSwag | MMLU | MathQA | ToxiGen |
-|---|---:|---:|---:|---:|
-| Llama-2-7B | 57.80 | 46.29 | 31.52 | 45.00 |
-| SVD | 57.54 | 46.81 | 31.52 | 44.15 |
-| GEVD | 45.36 | 46.00 | 28.24 | 48.94 |
-| AdaSpec | 56.46 | 46.75 | 31.86 | 43.51 |
+![Table 3: Control-task results](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/table3.png)
 
-| Method | Editor state (M) | Latency (ms) | Peak GPU (GiB) | Storage (GiB) |
-|---|---:|---:|---:|---:|
-| SVD | 33.6 | 50.23 | 17.63 | 4.00 |
-| GEVD | 33.6 | 50.26 | 17.63 | 4.00 |
-| AdaSpec | 67.1 | 51.68 | 14.79 | 8.00 |
+### Table 4: Qualitative Editor Complementarity
+
+![Table 4: Qualitative editor cases](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/table4.png)
+
+### Table 5: Computational and Storage Overhead
+
+![Table 5: Resource overhead](https://raw.githubusercontent.com/Khalil-Liu/Adaspec/main/assets/table5.png)
 
 The resource measurements use one NVIDIA GeForce RTX 5090 on TruthfulQA. State and storage exclude the shared frozen Llama-2-7B backbone.
 
