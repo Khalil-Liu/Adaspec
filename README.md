@@ -8,6 +8,17 @@ AdaSpec is an inference-time LLM alignment framework. It adaptively routes each 
 - (2026-07-31) Released inference, evaluation, result artifacts, and manuscript visualizations.
 - Training scripts, configurations, and extended reproduction resources are coming soon after the review process.
 
+## Revision Supplementary Experiments
+
+We added a set of supplementary experiments during manuscript revision to address reviewer questions about statistical uncertainty, routing reliability, bypass behavior, evaluation protocols, and BBQ context-specific performance. The public package includes the corresponding Python scripts and question-level JSON outputs:
+
+- paired confidence intervals and significance tests for the saved matched TruthfulQA results;
+- a held-out prompt-only audit of editor-preference prediction, calibration, bypass, and routing alternatives;
+- matched TruthfulQA comparisons of the backbone, fixed editors, random routing, routing without bypass, AdaSpec, and a diagnostic oracle;
+- matched BBQ analyses for ambiguous and disambiguated contexts.
+
+The complete package is available in [`supplementary_experiments/`](supplementary_experiments/README.md). The controlled prompt-only audit and candidate-continuation replay are documented as separate evaluation protocols and should not be interpreted as numerical reproductions of one another.
+
 ## Highlights
 
 AdaSpec makes spectral activation editing adaptive to the input rather than applying one fixed editor to every prompt. It combines two complementary spectral editors: the SVD editor preserves dominant representation directions learned from the aligned demonstrations, while the GEVD editor emphasizes directions that discriminate aligned and misaligned representations. A lightweight probe estimates the preferred editor from pre-edit hidden states. High-confidence predictions are routed to the selected editor, whereas uncertain cases bypass editing, reducing unnecessary interventions. The complete procedure operates at inference time and keeps the backbone frozen.
