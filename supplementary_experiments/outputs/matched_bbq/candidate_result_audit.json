@@ -1,0 +1,75 @@
+{
+  "label": "t438 projectors + archived probe/protocol; new candidate experiment",
+  "truthfulqa": {
+    "n": 817,
+    "MC1_percent": 42.83965728274174,
+    "MC2_percent": 59.03377171684006,
+    "MC3_percent": 30.304491849779502,
+    "router_stats": {
+      "svd": 3039,
+      "gevd": 2835,
+      "bypass": 335,
+      "prob_mean": 0.4864184856414795,
+      "prob_min": 1.7085169680115847e-22,
+      "prob_max": 1.0,
+      "prob_p50": 0.4412589967250824,
+      "prob_p90": 0.9998138546943665,
+      "prob_p95": 0.9999936819076538,
+      "prob_p99": 1.0
+    }
+  },
+  "bbq_disambig": {
+    "n": 5246,
+    "correct": 2299,
+    "unknown": 913,
+    "accuracy_percent": 43.8238658025162,
+    "unknown_percent": 17.403736179946627,
+    "s_dis_percent": 6.485114239556888,
+    "sr_percent": 41.577335375191424,
+    "router_actions_per_candidate": {
+      "svd": 97,
+      "gevd": 15598,
+      "bypass": 43,
+      "prob_mean": 0.991500973701477,
+      "prob_min": 0.010544775985181332,
+      "prob_max": 1.0,
+      "prob_p50": 0.9999998807907104,
+      "prob_p90": 1.0,
+      "prob_p95": 1.0,
+      "prob_p99": 1.0
+    }
+  },
+  "bbq_ambig": {
+    "n": 5246,
+    "correct_and_unknown": 903,
+    "biased_non_unknown": 2322,
+    "non_unknown": 4343,
+    "accuracy_and_unknown_percent": 17.21311475409836,
+    "official_s_amb_percent": 5.737704918032792,
+    "old_evaluator_unscaled_score_percent_not_for_ambig": 6.930693069306937,
+    "old_evaluator_sr_undefined": true,
+    "router_actions_per_candidate": {
+      "svd": 0,
+      "gevd": 15738,
+      "bypass": 0,
+      "prob_mean": 0.9997352361679077,
+      "prob_min": 0.6401615142822266,
+      "prob_max": 1.0,
+      "prob_p50": 0.9999988079071045,
+      "prob_p90": 1.0,
+      "prob_p95": 1.0,
+      "prob_p99": 1.0
+    }
+  },
+  "checks": [
+    "preflight and full completion",
+    "all row counts and unique keys",
+    "prediction, correctness, unknown, and bias flags",
+    "summary values recomputed from rows",
+    "planned arguments equal actual arguments",
+    "ambiguous and disambiguated items pair positionally",
+    "ambiguous bias score uses BBQ s_AMB=(1-accuracy)*s_DIS"
+  ],
+  "matched_fixed_or_backbone_baseline_available": false,
+  "bbq_bias_definition_source": "https://aclanthology.org/2022.findings-acl.165/"
+}

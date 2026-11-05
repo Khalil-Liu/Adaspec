@@ -1,0 +1,14 @@
+{
+  "n_total": 2000,
+  "n_disagreement": 137,
+  "n_train_disagreement": 84,
+  "train_binary_counts": [
+    47,
+    37
+  ],
+  "train_threeway_counts": [
+    1160,
+    6,
+    34
+  ]
+}

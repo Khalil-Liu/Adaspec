@@ -1,0 +1,51 @@
+{
+  "source_sha256": "28b2b390d220da31b1884cf89d81eb6b7a4e0cb0de336997b43a7cadc621e33e",
+  "scope": "exploratory held-out counterfactual diagnostic; no new model inference",
+  "n_questions": 817,
+  "bypass": {
+    "n": 290,
+    "harm_if_forced_edit": 10,
+    "help_if_forced_edit": 15,
+    "unchanged_if_forced_edit": 265
+  },
+  "edited": {
+    "n": 527,
+    "harm_if_forced_edit": 10,
+    "help_if_forced_edit": 15,
+    "unchanged_if_forced_edit": 502
+  },
+  "adaspec_minus_no_bypass": {
+    "MC1": {
+      "delta_pp": -0.6119951040391677,
+      "paired_bootstrap_95CI_pp": [
+        -1.8359853121175032,
+        0.6119951040391677
+      ]
+    },
+    "MC2": {
+      "delta_pp": -1.0333030904262068,
+      "paired_bootstrap_95CI_pp": [
+        -1.9686171158958135,
+        -0.14983188410437137
+      ]
+    },
+    "MC3": {
+      "delta_pp": -0.2745235180975695,
+      "paired_bootstrap_95CI_pp": [
+        -0.904047910473859,
+        0.3202774377804978
+      ]
+    }
+  },
+  "random_bypass_same_coverage_MC1": {
+    "replicates": 10000,
+    "seed": 42,
+    "observed_adaspec_pct": 36.964504283965724,
+    "random_mean_pct": 37.143292533659356,
+    "random_95_interval_pct": [
+      36.352509179926564,
+      37.9436964504284
+    ],
+    "fraction_random_at_least_observed": 0.7207
+  }
+}

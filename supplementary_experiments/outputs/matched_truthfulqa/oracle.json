@@ -1,0 +1,23 @@
+{
+  "policy": "per-question, per-metric test-label upper bound over bypass/SVD/GEVD",
+  "total_mc1": 0.4638922888616891,
+  "total_mc2": 0.6510320448048149,
+  "total_mc3": 0.3517305861553106,
+  "selected_actions": {
+    "MC1": {
+      "bypass": 743,
+      "svd": 16,
+      "gevd": 58
+    },
+    "MC2": {
+      "bypass": 205,
+      "svd": 181,
+      "gevd": 431
+    },
+    "MC3": {
+      "bypass": 652,
+      "svd": 25,
+      "gevd": 140
+    }
+  }
+}

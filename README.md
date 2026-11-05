@@ -4,6 +4,7 @@ AdaSpec is an inference-time LLM alignment framework. It adaptively routes each 
 
 ## Updates
 
+- (2026-11-05) Added [supplementary revision experiments](supplementary_experiments/README.md), including scripts and question-level JSON outputs for paired statistics, routing audits, matched policy comparisons, and BBQ context analysis.
 - (2026-07-31) Released inference, evaluation, result artifacts, and manuscript visualizations.
 - Training scripts, configurations, and extended reproduction resources are coming soon after the review process.
 

@@ -1,0 +1,59 @@
+{
+  "time_utc": "2026-11-03T00:54:46.462522+00:00",
+  "model": "<MODEL_PATH>",
+  "checks": {
+    "src/benchmark_evaluation/truthfulqa_eval_probe_router_abstain.py": {
+      "allowed": [
+        "1c727ea10283a2ef3071ad501088854712ca2f39dce49f8245053f05e3e706d4"
+      ],
+      "actual": "1c727ea10283a2ef3071ad501088854712ca2f39dce49f8245053f05e3e706d4"
+    },
+    "src/benchmark_evaluation/bbq_bias_metrics_eval_probe_router_abstain.py": {
+      "allowed": [
+        "c22b4f0a828084e411ebca1bcd4fb422f40308204271408f423fa5c4373c9ea9"
+      ],
+      "actual": "c22b4f0a828084e411ebca1bcd4fb422f40308204271408f423fa5c4373c9ea9"
+    },
+    "src/decoding_algorithm/inference_probe_router_abstain.py": {
+      "allowed": [
+        "f36338959dc4e17a0b2393b557b8f3c32fc1fc2104b992aadcb0c7c85c3496ae",
+        "1d626747983725625d2fa2caad3b744aaff4412a809be13523a35ee8ffa9f1ab"
+      ],
+      "actual": "1d626747983725625d2fa2caad3b744aaff4412a809be13523a35ee8ffa9f1ab"
+    },
+    "data/truthfulqa/TruthfulQA.csv": {
+      "expected": "967b82fb1fb6274e4971c6c80caa9d04f844c512b1033c146f26c78270cd384b",
+      "actual": "967b82fb1fb6274e4971c6c80caa9d04f844c512b1033c146f26c78270cd384b"
+    },
+    "svd_positive_proj": {
+      "path": "<PROJECT_ROOT>/server_checkpoint_backup/t438_svd_halueval_2000_k998/no_mean_sub_uu_positive.pt",
+      "sha256": "4b3fbf3d3874734e12d2ae98336dc0ca9fe63f10960c4aff867869c4e0dc2cff",
+      "bytes": 2147485401,
+      "expected_sha256": "4b3fbf3d3874734e12d2ae98336dc0ca9fe63f10960c4aff867869c4e0dc2cff"
+    },
+    "svd_negative_proj": {
+      "path": "<PROJECT_ROOT>/server_checkpoint_backup/t438_svd_halueval_2000_k998/no_mean_sub_uu_negative.pt",
+      "sha256": "ee08f577aabc8f6903d9ac9bdb4250343fb2d2be2cfe8dbf7d47cc9601df1567",
+      "bytes": 2147485401,
+      "expected_sha256": "ee08f577aabc8f6903d9ac9bdb4250343fb2d2be2cfe8dbf7d47cc9601df1567"
+    },
+    "gevd_positive_proj": {
+      "path": "<PROJECT_ROOT>/server_checkpoint_backup/t438_gevd_adaptive_bottomk_k32_n8/no_mean_sub_uu_positive.pt",
+      "sha256": "3202d7d2be2ae2bbf1cc98d56fdd86e00cc976e9fff1806ac91e7c3d5d659751",
+      "bytes": 2147485401,
+      "expected_sha256": "3202d7d2be2ae2bbf1cc98d56fdd86e00cc976e9fff1806ac91e7c3d5d659751"
+    },
+    "gevd_negative_proj": {
+      "path": "<PROJECT_ROOT>/server_checkpoint_backup/t438_gevd_adaptive_bottomk_k32_n8/no_mean_sub_uu_negative.pt",
+      "sha256": "b044719fe6f655814677e5f5264631f18a0e35c872ffad5c6e75de0e1caae343",
+      "bytes": 2147485401,
+      "expected_sha256": "b044719fe6f655814677e5f5264631f18a0e35c872ffad5c6e75de0e1caae343"
+    },
+    "probe_path": {
+      "path": "<PROJECT_ROOT>/exp_results/truthfulqa/probe_router/last2_mean_mlp_probe/probe_router.pt",
+      "sha256": "83d21cfcd3afc9d64c3b0d8bf1fe2a55f246634a7934e84e1de21ddd233d4ad9",
+      "bytes": 51855
+    }
+  },
+  "errors": []
+}

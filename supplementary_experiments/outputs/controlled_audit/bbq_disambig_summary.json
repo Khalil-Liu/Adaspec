@@ -1,0 +1,325 @@
+{
+  "backbone": {
+    "metrics": {
+      "MC1": 0.4165078154784598,
+      "Unk": 0.19557758292032024,
+      "Biased": 0.4340449866565002,
+      "NonUnknown": 0.8042317956538315,
+      "SR_numerator": 0.2089210827296988,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.4165078154784598,
+      "BS": 0.07940270206209998,
+      "SR": 0.41976254308693983
+    },
+    "actions": {
+      "bypass": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.0,
+        "harm_rate": 0.0
+      },
+      "svd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "gevd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      }
+    }
+  },
+  "fixed_svd": {
+    "metrics": {
+      "MC1": 0.4189858940144872,
+      "Unk": 0.20034311856652687,
+      "Biased": 0.4287075867327488,
+      "NonUnknown": 0.7994662600076249,
+      "SR_numerator": 0.20396492565764393,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.4189858940144872,
+      "BS": 0.07248450166905096,
+      "SR": 0.409804672539257
+    },
+    "actions": {
+      "bypass": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "svd": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.007624857033930614,
+        "harm_rate": 0.005146778497903164
+      },
+      "gevd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      }
+    }
+  },
+  "fixed_gevd": {
+    "metrics": {
+      "MC1": 0.471978650400305,
+      "Unk": 0.1237133053755242,
+      "Biased": 0.4571101791841403,
+      "NonUnknown": 0.8759054517727792,
+      "SR_numerator": 0.2106366755623332,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.47159740754860846,
+      "BS": 0.04374319912948876,
+      "SR": 0.42320949827652243
+    },
+    "actions": {
+      "bypass": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "svd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "gevd": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.10198246282882197,
+        "harm_rate": 0.046511627906976744
+      }
+    }
+  },
+  "best_fixed_validation": {
+    "metrics": {
+      "MC1": 0.4189858940144872,
+      "Unk": 0.20034311856652687,
+      "Biased": 0.4287075867327488,
+      "NonUnknown": 0.7994662600076249,
+      "SR_numerator": 0.20396492565764393,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.4189858940144872,
+      "BS": 0.07248450166905096,
+      "SR": 0.409804672539257
+    },
+    "actions": {
+      "bypass": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "svd": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.007624857033930614,
+        "harm_rate": 0.005146778497903164
+      },
+      "gevd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      }
+    }
+  },
+  "random_binary": {
+    "metrics": {
+      "MC1": 0.4466260007624857,
+      "Unk": 0.15935951200914983,
+      "Biased": 0.44510102935569956,
+      "NonUnknown": 0.8402592451391536,
+      "SR_numerator": 0.2089210827296988,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.44643537933663746,
+      "BS": 0.05943738656987296,
+      "SR": 0.41976254308693983
+    },
+    "actions": {
+      "bypass": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "svd": {
+        "n": 2588,
+        "coverage": 0.4933282500953107,
+        "gain_rate": 0.007341576506955177,
+        "harm_rate": 0.006955177743431221
+      },
+      "gevd": {
+        "n": 2658,
+        "coverage": 0.5066717499046893,
+        "gain_rate": 0.10346124905944319,
+        "harm_rate": 0.04439428141459744
+      }
+    }
+  },
+  "router_no_bypass": {
+    "metrics": {
+      "MC1": 0.4189858940144872,
+      "Unk": 0.20034311856652687,
+      "Biased": 0.4287075867327488,
+      "NonUnknown": 0.7994662600076249,
+      "SR_numerator": 0.20396492565764393,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.4189858940144872,
+      "BS": 0.07248450166905096,
+      "SR": 0.409804672539257
+    },
+    "actions": {
+      "bypass": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "svd": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.007624857033930614,
+        "harm_rate": 0.005146778497903164
+      },
+      "gevd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      }
+    }
+  },
+  "adaspec": {
+    "metrics": {
+      "MC1": 0.4189858940144872,
+      "Unk": 0.20034311856652687,
+      "Biased": 0.4287075867327488,
+      "NonUnknown": 0.7994662600076249,
+      "SR_numerator": 0.20396492565764393,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.4189858940144872,
+      "BS": 0.07248450166905096,
+      "SR": 0.409804672539257
+    },
+    "actions": {
+      "bypass": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "svd": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.007624857033930614,
+        "harm_rate": 0.005146778497903164
+      },
+      "gevd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      }
+    }
+  },
+  "direct_threeway": {
+    "metrics": {
+      "MC1": 0.4165078154784598,
+      "Unk": 0.19557758292032024,
+      "Biased": 0.4340449866565002,
+      "NonUnknown": 0.8042317956538315,
+      "SR_numerator": 0.2089210827296988,
+      "SR_denominator": 0.4977125428898208,
+      "BiasValid": 0.9994281357224553,
+      "BiasCorrect": 0.4165078154784598,
+      "BS": 0.07940270206209998,
+      "SR": 0.41976254308693983
+    },
+    "actions": {
+      "bypass": {
+        "n": 5246,
+        "coverage": 1.0,
+        "gain_rate": 0.0,
+        "harm_rate": 0.0
+      },
+      "svd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      },
+      "gevd": {
+        "n": 0,
+        "coverage": 0.0,
+        "gain_rate": null,
+        "harm_rate": null
+      }
+    }
+  },
+  "oracle_per_metric": {
+    "accuracy": 0.520777735417461,
+    "note": "upper bound on accuracy only; no per-metric max of lower-is-better bias metrics"
+  },
+  "bias_metadata_coverage": {
+    "total": 5246,
+    "valid": 5243,
+    "rule": "accuracy and unknown use all rows; BS and SR use official valid-target rows only; no heuristic target imputation"
+  },
+  "heldout_editor_preference": {
+    "n": 770,
+    "accuracy": 0.3194805194805195,
+    "majority_training_baseline_accuracy": 0.3194805194805195,
+    "brier": 0.670184813374598,
+    "ECE": 0.6723540425658256,
+    "calibration_bins": [
+      {
+        "lo": 0.0,
+        "n": 770,
+        "p_mean": 0.008165437953654845,
+        "positive_rate": 0.6805194805194805
+      }
+    ],
+    "risk_coverage": [
+      {
+        "threshold": 0.5,
+        "coverage": 1.0,
+        "accuracy": 0.3194805194805195
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 1.0,
+        "accuracy": 0.3194805194805195
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 1.0,
+        "accuracy": 0.3194805194805195
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 1.0,
+        "accuracy": 0.3194805194805195
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 1.0,
+        "accuracy": 0.3194805194805195
+      }
+    ]
+  }
+}

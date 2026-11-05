@@ -1,0 +1,911 @@
+{
+  "router_test_report.json": {
+    "preference_probe": {
+      "n": 27,
+      "accuracy": 0.6666666666666666,
+      "majority_training_baseline_accuracy": 0.6296296296296297,
+      "brier": 0.2089774988444376,
+      "ECE": 0.18101078216676358,
+      "calibration_bins": [
+        {
+          "lo": 0.0,
+          "n": 1,
+          "p_mean": 0.09130682051181793,
+          "positive_rate": 0.0
+        },
+        {
+          "lo": 0.1,
+          "n": 2,
+          "p_mean": 0.16281497478485107,
+          "positive_rate": 0.0
+        },
+        {
+          "lo": 0.2,
+          "n": 2,
+          "p_mean": 0.28292524814605713,
+          "positive_rate": 0.0
+        },
+        {
+          "lo": 0.30000000000000004,
+          "n": 8,
+          "p_mean": 0.35250893235206604,
+          "positive_rate": 0.25
+        },
+        {
+          "lo": 0.4,
+          "n": 3,
+          "p_mean": 0.4360162317752838,
+          "positive_rate": 0.6666666666666666
+        },
+        {
+          "lo": 0.5,
+          "n": 9,
+          "p_mean": 0.5423798561096191,
+          "positive_rate": 0.6666666666666666
+        },
+        {
+          "lo": 0.6000000000000001,
+          "n": 2,
+          "p_mean": 0.636949896812439,
+          "positive_rate": 0.0
+        }
+      ],
+      "risk_coverage": [
+        {
+          "threshold": 0.5,
+          "coverage": 1.0,
+          "accuracy": 0.6666666666666666
+        },
+        {
+          "threshold": 0.6,
+          "coverage": 0.5555555555555556,
+          "accuracy": 0.7333333333333333
+        },
+        {
+          "threshold": 0.7,
+          "coverage": 0.18518518518518517,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.8,
+          "coverage": 0.1111111111111111,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.9,
+          "coverage": 0.037037037037037035,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "policy_test": {
+      "backbone": {
+        "metrics": {
+          "MC1": 0.925
+        },
+        "actions": {
+          "bypass": {
+            "n": 400,
+            "coverage": 1.0,
+            "gain_rate": 0.0,
+            "harm_rate": 0.0
+          },
+          "svd": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "gevd": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          }
+        }
+      },
+      "fixed_svd": {
+        "metrics": {
+          "MC1": 0.925
+        },
+        "actions": {
+          "bypass": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "svd": {
+            "n": 400,
+            "coverage": 1.0,
+            "gain_rate": 0.0025,
+            "harm_rate": 0.0025
+          },
+          "gevd": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          }
+        }
+      },
+      "fixed_gevd": {
+        "metrics": {
+          "MC1": 0.9075
+        },
+        "actions": {
+          "bypass": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "svd": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "gevd": {
+            "n": 400,
+            "coverage": 1.0,
+            "gain_rate": 0.025,
+            "harm_rate": 0.0425
+          }
+        }
+      },
+      "best_fixed_validation": {
+        "metrics": {
+          "MC1": 0.925
+        },
+        "actions": {
+          "bypass": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "svd": {
+            "n": 400,
+            "coverage": 1.0,
+            "gain_rate": 0.0025,
+            "harm_rate": 0.0025
+          },
+          "gevd": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          }
+        }
+      },
+      "random_binary": {
+        "metrics": {
+          "MC1": 0.9175
+        },
+        "actions": {
+          "bypass": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "svd": {
+            "n": 214,
+            "coverage": 0.535,
+            "gain_rate": 0.004672897196261682,
+            "harm_rate": 0.004672897196261682
+          },
+          "gevd": {
+            "n": 186,
+            "coverage": 0.465,
+            "gain_rate": 0.010752688172043012,
+            "harm_rate": 0.026881720430107527
+          }
+        }
+      },
+      "router_no_bypass": {
+        "metrics": {
+          "MC1": 0.9275
+        },
+        "actions": {
+          "bypass": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "svd": {
+            "n": 210,
+            "coverage": 0.525,
+            "gain_rate": 0.004761904761904762,
+            "harm_rate": 0.0
+          },
+          "gevd": {
+            "n": 190,
+            "coverage": 0.475,
+            "gain_rate": 0.02631578947368421,
+            "harm_rate": 0.02631578947368421
+          }
+        }
+      },
+      "adaspec": {
+        "metrics": {
+          "MC1": 0.9275
+        },
+        "actions": {
+          "bypass": {
+            "n": 109,
+            "coverage": 0.2725,
+            "gain_rate": 0.0,
+            "harm_rate": 0.0
+          },
+          "svd": {
+            "n": 155,
+            "coverage": 0.3875,
+            "gain_rate": 0.0064516129032258064,
+            "harm_rate": 0.0
+          },
+          "gevd": {
+            "n": 136,
+            "coverage": 0.34,
+            "gain_rate": 0.022058823529411766,
+            "harm_rate": 0.022058823529411766
+          }
+        }
+      },
+      "direct_threeway": {
+        "metrics": {
+          "MC1": 0.925
+        },
+        "actions": {
+          "bypass": {
+            "n": 394,
+            "coverage": 0.985,
+            "gain_rate": 0.0,
+            "harm_rate": 0.0
+          },
+          "svd": {
+            "n": 0,
+            "coverage": 0.0,
+            "gain_rate": null,
+            "harm_rate": null
+          },
+          "gevd": {
+            "n": 6,
+            "coverage": 0.015,
+            "gain_rate": 0.0,
+            "harm_rate": 0.0
+          }
+        }
+      },
+      "oracle_per_metric": {
+        "MC1": 0.95
+      }
+    },
+    "oracle_note": "oracle uses held-out labels for diagnostic ceiling only, not deployment"
+  },
+  "truthfulqa_summary.json": {
+    "backbone": {
+      "metrics": {
+        "MC1": 0.3635250917992656,
+        "MC2": 0.5504805882860496,
+        "MC3": 0.2909541295098211
+      },
+      "actions": {
+        "bypass": {
+          "n": 817,
+          "coverage": 1.0,
+          "gain_rate": 0.0,
+          "harm_rate": 0.0
+        },
+        "svd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "fixed_svd": {
+      "metrics": {
+        "MC1": 0.3671970624235006,
+        "MC2": 0.5569648141613074,
+        "MC3": 0.2958296905053331
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 817,
+          "coverage": 1.0,
+          "gain_rate": 0.01346389228886169,
+          "harm_rate": 0.009791921664626682
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "fixed_gevd": {
+      "metrics": {
+        "MC1": 0.35862913096695226,
+        "MC2": 0.5727524345482456,
+        "MC3": 0.30088642148005673
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "gevd": {
+          "n": 817,
+          "coverage": 1.0,
+          "gain_rate": 0.07711138310893513,
+          "harm_rate": 0.08200734394124846
+        }
+      }
+    },
+    "best_fixed_validation": {
+      "metrics": {
+        "MC1": 0.3671970624235006,
+        "MC2": 0.5569648141613074,
+        "MC3": 0.2958296905053331
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 817,
+          "coverage": 1.0,
+          "gain_rate": 0.01346389228886169,
+          "harm_rate": 0.009791921664626682
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "random_binary": {
+      "metrics": {
+        "MC1": 0.36107711138310894,
+        "MC2": 0.5639541838341815,
+        "MC3": 0.29623234442695884
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 404,
+          "coverage": 0.4944920440636475,
+          "gain_rate": 0.007425742574257425,
+          "harm_rate": 0.01485148514851485
+        },
+        "gevd": {
+          "n": 413,
+          "coverage": 0.5055079559363526,
+          "gain_rate": 0.07990314769975787,
+          "harm_rate": 0.0774818401937046
+        }
+      }
+    },
+    "router_no_bypass": {
+      "metrics": {
+        "MC1": 0.37576499388004897,
+        "MC2": 0.5642728395888676,
+        "MC3": 0.29869003905111613
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 616,
+          "coverage": 0.7539779681762546,
+          "gain_rate": 0.01461038961038961,
+          "harm_rate": 0.00974025974025974
+        },
+        "gevd": {
+          "n": 201,
+          "coverage": 0.2460220318237454,
+          "gain_rate": 0.1044776119402985,
+          "harm_rate": 0.06965174129353234
+        }
+      }
+    },
+    "adaspec": {
+      "metrics": {
+        "MC1": 0.36964504283965727,
+        "MC2": 0.5539398086846056,
+        "MC3": 0.2959448038701405
+      },
+      "actions": {
+        "bypass": {
+          "n": 290,
+          "coverage": 0.35495716034271724,
+          "gain_rate": 0.0,
+          "harm_rate": 0.0
+        },
+        "svd": {
+          "n": 449,
+          "coverage": 0.5495716034271726,
+          "gain_rate": 0.011135857461024499,
+          "harm_rate": 0.011135857461024499
+        },
+        "gevd": {
+          "n": 78,
+          "coverage": 0.09547123623011015,
+          "gain_rate": 0.1282051282051282,
+          "harm_rate": 0.0641025641025641
+        }
+      }
+    },
+    "direct_threeway": {
+      "metrics": {
+        "MC1": 0.3635250917992656,
+        "MC2": 0.5504805882860496,
+        "MC3": 0.2909541295098211
+      },
+      "actions": {
+        "bypass": {
+          "n": 817,
+          "coverage": 1.0,
+          "gain_rate": 0.0,
+          "harm_rate": 0.0
+        },
+        "svd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "oracle_per_metric": {
+      "MC1": 0.4479804161566707,
+      "MC2": 0.6487757417879136,
+      "MC3": 0.3558144391987721
+    },
+    "heldout_editor_preference": {
+      "n": 131,
+      "accuracy": 0.5801526717557252,
+      "majority_training_baseline_accuracy": 0.5267175572519084,
+      "brier": 0.25211615707448776,
+      "ECE": 0.0749297189124104,
+      "calibration_bins": [
+        {
+          "lo": 0.1,
+          "n": 1,
+          "p_mean": 0.14823097723652603,
+          "positive_rate": 1.0
+        },
+        {
+          "lo": 0.2,
+          "n": 13,
+          "p_mean": 0.2713850982335377,
+          "positive_rate": 0.46153846153846156
+        },
+        {
+          "lo": 0.30000000000000004,
+          "n": 31,
+          "p_mean": 0.35582404747622,
+          "positive_rate": 0.41935483870967744
+        },
+        {
+          "lo": 0.4,
+          "n": 49,
+          "p_mean": 0.4513983505287549,
+          "positive_rate": 0.40816326530612246
+        },
+        {
+          "lo": 0.5,
+          "n": 35,
+          "p_mean": 0.5384660867772274,
+          "positive_rate": 0.6
+        },
+        {
+          "lo": 0.6000000000000001,
+          "n": 2,
+          "p_mean": 0.6251848824275342,
+          "positive_rate": 0.5
+        }
+      ],
+      "risk_coverage": [
+        {
+          "threshold": 0.5,
+          "coverage": 1.0,
+          "accuracy": 0.5801526717557252
+        },
+        {
+          "threshold": 0.6,
+          "coverage": 0.35877862595419846,
+          "accuracy": 0.5531914893617021
+        },
+        {
+          "threshold": 0.7,
+          "coverage": 0.10687022900763359,
+          "accuracy": 0.5
+        },
+        {
+          "threshold": 0.8,
+          "coverage": 0.007633587786259542,
+          "accuracy": 0.0
+        },
+        {
+          "threshold": 0.9,
+          "coverage": 0.0,
+          "accuracy": null
+        }
+      ]
+    }
+  },
+  "bbq_disambig_summary.json": {
+    "backbone": {
+      "metrics": {
+        "MC1": 0.4165078154784598,
+        "Unk": 0.19557758292032024,
+        "Biased": 0.4340449866565002,
+        "NonUnknown": 0.8042317956538315,
+        "SR_numerator": 0.2089210827296988,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.4165078154784598,
+        "BS": 0.07940270206209998,
+        "SR": 0.41976254308693983
+      },
+      "actions": {
+        "bypass": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.0,
+          "harm_rate": 0.0
+        },
+        "svd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "fixed_svd": {
+      "metrics": {
+        "MC1": 0.4189858940144872,
+        "Unk": 0.20034311856652687,
+        "Biased": 0.4287075867327488,
+        "NonUnknown": 0.7994662600076249,
+        "SR_numerator": 0.20396492565764393,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.4189858940144872,
+        "BS": 0.07248450166905096,
+        "SR": 0.409804672539257
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.007624857033930614,
+          "harm_rate": 0.005146778497903164
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "fixed_gevd": {
+      "metrics": {
+        "MC1": 0.471978650400305,
+        "Unk": 0.1237133053755242,
+        "Biased": 0.4571101791841403,
+        "NonUnknown": 0.8759054517727792,
+        "SR_numerator": 0.2106366755623332,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.47159740754860846,
+        "BS": 0.04374319912948876,
+        "SR": 0.42320949827652243
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "gevd": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.10198246282882197,
+          "harm_rate": 0.046511627906976744
+        }
+      }
+    },
+    "best_fixed_validation": {
+      "metrics": {
+        "MC1": 0.4189858940144872,
+        "Unk": 0.20034311856652687,
+        "Biased": 0.4287075867327488,
+        "NonUnknown": 0.7994662600076249,
+        "SR_numerator": 0.20396492565764393,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.4189858940144872,
+        "BS": 0.07248450166905096,
+        "SR": 0.409804672539257
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.007624857033930614,
+          "harm_rate": 0.005146778497903164
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "random_binary": {
+      "metrics": {
+        "MC1": 0.4466260007624857,
+        "Unk": 0.15935951200914983,
+        "Biased": 0.44510102935569956,
+        "NonUnknown": 0.8402592451391536,
+        "SR_numerator": 0.2089210827296988,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.44643537933663746,
+        "BS": 0.05943738656987296,
+        "SR": 0.41976254308693983
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 2588,
+          "coverage": 0.4933282500953107,
+          "gain_rate": 0.007341576506955177,
+          "harm_rate": 0.006955177743431221
+        },
+        "gevd": {
+          "n": 2658,
+          "coverage": 0.5066717499046893,
+          "gain_rate": 0.10346124905944319,
+          "harm_rate": 0.04439428141459744
+        }
+      }
+    },
+    "router_no_bypass": {
+      "metrics": {
+        "MC1": 0.4189858940144872,
+        "Unk": 0.20034311856652687,
+        "Biased": 0.4287075867327488,
+        "NonUnknown": 0.7994662600076249,
+        "SR_numerator": 0.20396492565764393,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.4189858940144872,
+        "BS": 0.07248450166905096,
+        "SR": 0.409804672539257
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.007624857033930614,
+          "harm_rate": 0.005146778497903164
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "adaspec": {
+      "metrics": {
+        "MC1": 0.4189858940144872,
+        "Unk": 0.20034311856652687,
+        "Biased": 0.4287075867327488,
+        "NonUnknown": 0.7994662600076249,
+        "SR_numerator": 0.20396492565764393,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.4189858940144872,
+        "BS": 0.07248450166905096,
+        "SR": 0.409804672539257
+      },
+      "actions": {
+        "bypass": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "svd": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.007624857033930614,
+          "harm_rate": 0.005146778497903164
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "direct_threeway": {
+      "metrics": {
+        "MC1": 0.4165078154784598,
+        "Unk": 0.19557758292032024,
+        "Biased": 0.4340449866565002,
+        "NonUnknown": 0.8042317956538315,
+        "SR_numerator": 0.2089210827296988,
+        "SR_denominator": 0.4977125428898208,
+        "BiasValid": 0.9994281357224553,
+        "BiasCorrect": 0.4165078154784598,
+        "BS": 0.07940270206209998,
+        "SR": 0.41976254308693983
+      },
+      "actions": {
+        "bypass": {
+          "n": 5246,
+          "coverage": 1.0,
+          "gain_rate": 0.0,
+          "harm_rate": 0.0
+        },
+        "svd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        },
+        "gevd": {
+          "n": 0,
+          "coverage": 0.0,
+          "gain_rate": null,
+          "harm_rate": null
+        }
+      }
+    },
+    "oracle_per_metric": {
+      "accuracy": 0.520777735417461,
+      "note": "upper bound on accuracy only; no per-metric max of lower-is-better bias metrics"
+    },
+    "bias_metadata_coverage": {
+      "total": 5246,
+      "valid": 5243,
+      "rule": "accuracy and unknown use all rows; BS and SR use official valid-target rows only; no heuristic target imputation"
+    },
+    "heldout_editor_preference": {
+      "n": 770,
+      "accuracy": 0.3194805194805195,
+      "majority_training_baseline_accuracy": 0.3194805194805195,
+      "brier": 0.670184813374598,
+      "ECE": 0.6723540425658256,
+      "calibration_bins": [
+        {
+          "lo": 0.0,
+          "n": 770,
+          "p_mean": 0.008165437953654845,
+          "positive_rate": 0.6805194805194805
+        }
+      ],
+      "risk_coverage": [
+        {
+          "threshold": 0.5,
+          "coverage": 1.0,
+          "accuracy": 0.3194805194805195
+        },
+        {
+          "threshold": 0.6,
+          "coverage": 1.0,
+          "accuracy": 0.3194805194805195
+        },
+        {
+          "threshold": 0.7,
+          "coverage": 1.0,
+          "accuracy": 0.3194805194805195
+        },
+        {
+          "threshold": 0.8,
+          "coverage": 1.0,
+          "accuracy": 0.3194805194805195
+        },
+        {
+          "threshold": 0.9,
+          "coverage": 1.0,
+          "accuracy": 0.3194805194805195
+        }
+      ]
+    }
+  },
+  "bbq_ambig_summary.json": {
+    "status": "not produced"
+  }
+}

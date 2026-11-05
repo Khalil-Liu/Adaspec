@@ -1,0 +1,44 @@
+{
+  "n": 817,
+  "bootstrap_replicates": 10000,
+  "seed": 42,
+  "resampling_unit": "question",
+  "metrics": {
+    "MC1": {
+      "SEA_percent": 39.290085679314565,
+      "AdaSpec_percent": 43.20685434516524,
+      "delta_pp": 3.9167686658506726,
+      "paired_delta_95CI_pp": [
+        1.7135862913096693,
+        6.119951040391677
+      ],
+      "p_raw": 0.0009727607079513675,
+      "test": "exact two-sided McNemar",
+      "p_Holm_three_metrics": 0.0029182821238541027
+    },
+    "MC2": {
+      "SEA_percent": 57.10980838799736,
+      "AdaSpec_percent": 59.87006310763672,
+      "delta_pp": 2.760254719639361,
+      "paired_delta_95CI_pp": [
+        0.9175597866290166,
+        4.647240553174558
+      ],
+      "p_raw": 0.0044995500449955,
+      "test": "paired two-sided sign-flip Monte Carlo with plus-one correction",
+      "p_Holm_three_metrics": 0.008999100089991
+    },
+    "MC3": {
+      "SEA_percent": 29.211109168269513,
+      "AdaSpec_percent": 30.655563326921953,
+      "delta_pp": 1.4444541586524453,
+      "paired_delta_95CI_pp": [
+        0.06411012997610276,
+        2.830382642653143
+      ],
+      "p_raw": 0.0390960903909609,
+      "test": "paired two-sided sign-flip Monte Carlo with plus-one correction",
+      "p_Holm_three_metrics": 0.0390960903909609
+    }
+  }
+}

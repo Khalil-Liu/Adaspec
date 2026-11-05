@@ -1,0 +1,55 @@
+{
+  "label": "historical-compatible TruthfulQA policy replay; t438 projectors + archived probe/evaluator",
+  "n": 817,
+  "protocol": {
+    "model": "<MODEL_PATH>",
+    "adaspec_thresholds": [
+      0.4,
+      0.6
+    ],
+    "no_bypass_thresholds": [
+      0.5,
+      0.5
+    ],
+    "random_seed": 42,
+    "routing_granularity": "candidate continuation, matching the archived evaluator",
+    "claim_boundary": "historical-compatible replay, not a prompt-only held-out audit"
+  },
+  "policies": {
+    "backbone_all_bypass": {
+      "MC1_percent": 37.33170134638923,
+      "MC2_percent": 54.57753275421074,
+      "MC3_percent": 28.05006702803521
+    },
+    "fixed_svd": {
+      "MC1_percent": 37.69889840881273,
+      "MC2_percent": 55.30888162707034,
+      "MC3_percent": 27.927959433467386
+    },
+    "fixed_gevd": {
+      "MC1_percent": 37.2093023255814,
+      "MC2_percent": 57.027339899003316,
+      "MC3_percent": 29.356482290998827
+    },
+    "random_binary": {
+      "MC1_percent": 35.618115055079556,
+      "MC2_percent": 55.12711014645251,
+      "MC3_percent": 27.6686872219308
+    },
+    "archived_probe_no_bypass": {
+      "MC1_percent": 42.47246022031824,
+      "MC2_percent": 58.945716268648304,
+      "MC3_percent": 30.178595714091443
+    },
+    "adaspec_archived_probe": {
+      "MC1_percent": 42.83965728274174,
+      "MC2_percent": 59.03377171684006,
+      "MC3_percent": 30.304491849779502
+    },
+    "oracle_test_label_bound": {
+      "MC1_percent": 46.38922888616891,
+      "MC2_percent": 65.1032044804815,
+      "MC3_percent": 35.17305861553106
+    }
+  }
+}
