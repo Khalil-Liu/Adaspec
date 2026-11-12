@@ -79,6 +79,8 @@ The default backbone is the gated Hugging Face model `meta-llama/Llama-2-7b-chat
 
 The evaluation release contains the probe checkpoint, but projector matrices are not stored in Git. Place them as follows, or override the shell variables used below.
 
+Projector weights: [Baidu Netdisk](https://pan.baidu.com/s/1nF9Sn-fn41qeMEFSpNawsA?pwd=vah4) (extraction code: `vah4`).
+
 ```text
 projectors/
   svd/no_mean_sub_uu_positive.pt
